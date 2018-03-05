@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Frutologia</title>
+<meta name="description" content="HTML tutorial">
+<meta name="keywords"
+content="fruta, pêssego, laranja, ananás, morango, batidos">
+<meta name="author" content="Raquel Agostinho">
+<meta http-equiv="refresh" content="30">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/exer2.css">
+</head>
+<body>
+	<header>
+		<a id="menu_icon">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" fill="white"/>
+			</svg>
+		</a>
+		<div id="drawer">
+			<nav class="col-3">
+			<a href="#batidos"> Batidos</a><br>
+			<a href="#combinacoes"> Combinações improváveis</a><br>
+			<a href="#como"> Como fazer</a><br>
+			<a href="#passo"> Passo a passo</a><br>
+			<a href="#valor"> Valor nutricional</a><br>
+		</nav>
+     </div>
+
+<h1>Frutologia</h1>
+<p>Vem descobrir o bom sabor da fruta.</p>
+</header>
+
+<br>
+<nav id="tabletPC" class="col-3">
+	<a href="#batidos"> Batidos</a><br>
+	<a href="#combinacoes"> Combinações improváveis</a><br>
+	<a href="#como"> Como fazer</a><br>
+	<a href="#passo"> Passo a passo</a><br>
+	<a href="#valor"> Valor nutricional</a><br>
+</nav>
+
+<div id= "container" class="col-9">
+	<section class="slideshow-container">
+		<h2></h2>
+		<article class="mySlides">
+		<figure>
+			<img src="images/img1.jpg">
+			<figcaption>Figura 1: Diferença entre néctar, sumo 100% e batido</figcaption>
+		</figure>
+		</article>
+		
+		<article class="mySlides">
+		<figure>
+			<img src="images/img2.jpg">
+			<figcaption>Figura 2: Vantagens de utilizar fruta nas receitas diárias.</figcaption>
+		</figure>
+		</article>
+		
+		<article class="mySlides">
+		<figure>
+			<img src="images/img3.jpg">
+			<figcaption>Figura 3: Origem da fruta</figcaption>
+		</figure>
+		</article>
+		
+<div class="dotpoints">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+</section>
+
+<section>
+<a name="batidos">
+<h2> Batidos </h2>
+<p><i>Para fazer um batido vais precisar de:</i>
+</p><ul>
+<li> Gelo </li>
+<li> Fruta à tua escolha</li>
+<li> Liquidificador</li>
+<li> Iogurte ou leite</li>
+</ul> 
+</section>
+
+ <section>
+<a name="combinacoes">
+<h2>Combinações improváveis</h2>
+
+
+<img src =
+"imagens/img2.jpg" width="800" height="auto" </img> 
+<img src =
+"imagens/img3.jpg" width="800" height="auto" </img> <br>
+<img src =
+"imagens/img1.jpg" width="800" height="auto" </img><br>
+<img src =
+"imagens/img4.jpg" width="800" height="auto" </img><br>
+</section>
+
+<section>
+<a name="como">
+<h2>Como fazer</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-MTa9JY5WnA" 
+frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</section>
+
+<section>
+<a name="passo">
+<h2> Passo a passo </h2>
+
+<ol>
+<li><u> Descascar a fruta </u></li>
+<li><u> Cortar a fruta </u></li>
+<li><u> Misturar tudo no liquidificador </u></li>
+</ol>
+</section>
+
+<section>
+<a name="valor">
+<h2>Valor nutricional</h2>
+<table border=“1px”>
+<th colspan="3"> Valor nutricional</th>
+<tr>
+<td> Batido </td> <td> Calorias </td> 
+</tr>
+<tr>
+<td> Batido de banana </td> <td> 60 </td> 
+</tr>
+<tr>
+<td> Batido de morango </td> <td> 30 </td> 
+</tr>
+<tr>
+<td> Batido de kiwi </td> <td> 40 </td>
+</tr>
+<tr>
+<td> Batido de amora </td> <td> 20 </td>
+</tr>
+</table>
+</section>
+</div>
+
+<aside>
+<h3>Venha provar</h3>
+<p>Lisboa - Bairro Alto</p>
+</aside>
+
+<footer>
+<p>Developed by Raquel Agostinho</p>
+</footer>
+
+<script>
+var slideIndex = 0;
+showSlides();
+function showSlides() {
+	var i = null;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	for (i = 0; i < slides.length; i++) {
+	slides[i].style.display = "none";}
+
+	slideIndex++;
+	if (slideIndex> slides.length) {slideIndex = 1}
+	
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+}
+		
+	slides[slideIndex-1].style.display = "block";
+	dots[slideIndex-1].className += " active";
+	setTimeout(showSlides, 3000); // Change image every 3 seconds
+	}
+	
+	var menu_icon = document.querySelector('#menu_icon');
+    var container = document.querySelector("#container");
+    var drawer = document.querySelector('#drawer');
+
+    menu_icon.addEventListener('click', function (e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+    });
+    container.addEventListener('click', function () {
+        drawer.classList.remove('open');
+    });
+
+	
+</script>
+
+</body>
+</html> 
